@@ -1,4 +1,4 @@
-import { FETCH_LOGIN_VIEW } from '../actions/actionTypes';
+import { FETCH_LOGIN_VIEW,FETCH_LOGIN_USERNAME,FETCH_LOGIN_PASSWORD } from '../actions/actionTypes';
 import { DEFAULT_STATE_LOGIN } from '../actions/LoginAction';
 
 const LoginReducer = (state = DEFAULT_STATE_LOGIN, action) => {
@@ -7,6 +7,18 @@ const LoginReducer = (state = DEFAULT_STATE_LOGIN, action) => {
             return {
                 ...state,
                 loginView
+            }
+        
+        case FETCH_LOGIN_USERNAME: 
+            return {
+                ...state,
+                loginUserName:action.loginUserName
+            }
+        
+        case FETCH_LOGIN_PASSWORD:
+            return {
+                ...state,
+                loginPassword:action.loginPassword
             }
 
         default:

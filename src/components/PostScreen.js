@@ -2,15 +2,24 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, Button, FlatList,ScrollView } from 'react-native';
 import DatePicker from 'react-native-datepicker'
 import { TextInput } from 'react-native-gesture-handler';
+import Firebase from '../../constant/firebaseconfig'; 
 
 import description from '../../constant/description';
 
 export default class PostScreen extends Component {
     constructor(props) {
         super(props)
+        // this.ref = firebase.firestore().collection('description');
         this.state = {
             date: "25-02-2020"
         }
+    }
+
+    componentDidMount () {
+        console.log("firebase")
+          Firebase.database().ref('/description').on('value',(snapshot)=>{console.log(snapshot.val())});
+    //    console.log(records)
+        
     }
 
     render() {

@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import configureStore from './src/store/configureStore';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import * as firebase from 'firebase';
 
 import LoginAction from './src/actions/LoginAction';
 import SignUpAction from './src/actions/SignUpAction';
